@@ -54,3 +54,7 @@ docker pull oguzpastirmaci/gpu-burn:latest
 docker pull nvidia/cuda:11.0-base
 docker pull redis:5.0-alpine3.10
 docker pull postgres:9.4
+docker pull swarmpit/swarmpit:latest
+docker pull couchdb:2.3.0
+docker pull influxdb:1.7
+docker pull swarmpit/agent:latest
