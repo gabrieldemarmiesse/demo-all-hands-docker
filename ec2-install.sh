@@ -49,3 +49,8 @@ curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/instal
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p $HOME/miniconda
 
+source /root/miniconda/bin/activate
+docker pull oguzpastirmaci/gpu-burn:latest
+docker pull nvidia/cuda:11.0-base
+docker pull redis:5.0-alpine3.10
+docker pull postgres:9.4
