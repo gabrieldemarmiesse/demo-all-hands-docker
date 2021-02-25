@@ -44,6 +44,7 @@ nvidia-smi -pm ENABLED
 docker run --gpus all nvidia/cuda:10.0-base nvidia-smi
 mkdir /home/ubuntu/.docker
 
+curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
 
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p $HOME/miniconda
