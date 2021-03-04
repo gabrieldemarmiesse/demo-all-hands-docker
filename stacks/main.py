@@ -8,5 +8,6 @@ print("Listing services:")
 print(swarmpit_stack.services())
 
 input("Press enter when you are done with the stack.")
+print("Removing the stack and destroying the swarm.")
 swarmpit_stack.remove()
 docker.swarm.leave(force=True)
