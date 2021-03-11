@@ -45,25 +45,12 @@ resource "aws_instance" "example" {
   key_name        = "tf-gabriel-ssh-key"
   security_groups = ["terraform_example_gabriel_all_hands"]
 
+  user_data = templatefile(format("%s/ec2-install.sh", path.module), {})
+
   root_block_device {
     volume_size = 80
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "sudo -s",
-      "cd /root",
-      "git clone https://github.com/gabrieldemarmiesse/demo-all-hands-docker.git",
-      "cd demo-all-hands-docker",
-      "bash ec2-install.sh",
-    ]
-    connection {
-      type        = "ssh"
-      user        = "ubuntu"
-      host        = self.public_ip
-      private_key = file("~/.ssh/id_rsa")
-    }
-  }
   tags = {
     Name = "GPUDemoExampleInstance"
   }

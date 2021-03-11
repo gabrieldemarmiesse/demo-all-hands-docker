@@ -1,6 +1,5 @@
 from python_on_whales import docker
 
-
 docker.swarm.init()
 swarmpit_stack = docker.stack.deploy("swarmpit", compose_files=["./docker-compose.yml"])
 

@@ -1,3 +1,6 @@
+#!/bin/bash -v
+
+
 # from ubuntu18 minimal
 # no need to reboot the server at any point.
 
@@ -46,8 +49,8 @@ mkdir /home/ubuntu/.docker
 
 curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
 
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
-bash ~/miniconda.sh -b -p $HOME/miniconda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /root/miniconda.sh
+bash /root/miniconda.sh -b -p /root/miniconda
 
 source /root/miniconda/bin/activate
 docker pull oguzpastirmaci/gpu-burn:latest
@@ -58,3 +61,5 @@ docker pull swarmpit/swarmpit:latest
 docker pull couchdb:2.3.0
 docker pull influxdb:1.7
 docker pull swarmpit/agent:latest
+
+cd /root && git clone https://github.com/gabrieldemarmiesse/demo-all-hands-docker.git
